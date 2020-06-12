@@ -10,7 +10,7 @@ function generatePassword() {
 
 
   var arrayOfChar = []
-
+let finalPass = ""
   var numOfChar = parseInt(prompt("How many characters would you like your password to contain?"))
 
   if (isNaN(numOfChar)) {
@@ -50,22 +50,19 @@ function generatePassword() {
     console.log(arrayOfChar.flat());
    var finalArray =  arrayOfChar.flat()
 
-    for (var i = 0; i <= numOfChar; i++) {
-      console.log(finalArray[Math.floor(Math.random()*finalArray.length)]);
+    for (var i = 0; i < numOfChar; i++) {
+      finalPass += (finalArray[Math.floor(Math.random()*finalArray.length)]);
 
     }
+    
+    
+    
+console.log(finalPass);
 
-    return arrayOfChar.charAt(Math.floor(Math.random() * numOfChar))
+    return finalPass
   }
 
 }
-
-
-
-
-
-
-
 
 
 // Write password to the #password input
