@@ -10,8 +10,12 @@ function generatePassword() {
 
 
   var arrayOfChar = []
-let finalPass = ""
-  var numOfChar = parseInt(prompt("How many characters would you like your password to contain?"))
+  
+  
+  let finalPass = ""
+
+  
+  var numOfChar = parseInt(prompt("How many characters would you like your password to contain?")) 
 
   if (isNaN(numOfChar)) {
     alert("The password length must be provided as a number!");
@@ -45,19 +49,24 @@ let finalPass = ""
     }
 
     if (lcYes == false && ucYes == false && numYes == false && specYes == false) {
-      alert("You need to choose at leasr one character option")
+      alert("You need to choose at leasr one character option"); 
+    
+
     }
+  
+
+
     console.log(arrayOfChar.flat());
-   var finalArray =  arrayOfChar.flat()
+    var finalArray = arrayOfChar.flat()
 
     for (var i = 0; i < numOfChar; i++) {
-      finalPass += (finalArray[Math.floor(Math.random()*finalArray.length)]);
+      finalPass += (finalArray[Math.floor(Math.random() * finalArray.length)]);
 
     }
-    
-    
-    
-console.log(finalPass);
+
+
+
+    console.log(finalPass);
 
     return finalPass
   }
@@ -73,6 +82,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
