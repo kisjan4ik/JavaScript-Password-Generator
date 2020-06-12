@@ -11,37 +11,46 @@ function generatePassword() {
 
   var array = []
 
-  var numOfChar = parseInt(prompt("How many characters would you like your password to contain?")) 
-  
+  var numOfChar = parseInt(prompt("How many characters would you like your password to contain?"))
+
   if (isNaN(numOfChar)) {
-    alert("The password length must be provided as a number!")
+    alert("The password length must be provided as a number!");
   }
-  if (numOfChar < 8) {
-    alert("Password length must be at least 8 characters!")
+  else if (numOfChar < 8) {
+    alert("Password length must be at least 8 characters!");
   }
-  if (numOfChar > 128) {
-    alert("Password length must be less than 129 characters!")
+  else if (numOfChar > 128) {
+    alert("Password length must be less than 129 characters!");
   }
- 
-  var lcYes = confirm ("Click OK to confirm including lower case letters");
-  if (lcYes == true) {
-    array.push(lcLetters)
+  else {
+
+    var lcYes = confirm("Click OK to confirm including lower case letters");
+    if (lcYes == true) {
+      array.push(lcLetters)
+
+
+      var ucYes = confirm("Click OK to confirm including upper case letters");
+      if (ucYes == true) {
+        array.push(ucLetters)
+      }
+
+      var numYes = confirm("Click OK to confirm including numeric charactres");
+      if (numYes == true) {
+        array.push(numSymbols)
+      }
+
+      var specYes = confirm("Click OK to confirm including special charactres");
+      if (specYes == true) {
+        array.push(specSymbols)
+      }
+      
+    }
+
+
+
+    return array.charAt(Math.floor(Math.random() * numOfChar))
   }
 
-  var ucYes = confirm("Click OK to confirm including upper case letters");
-  if (ucYes == true) {
-    array.push(ucLetters)
-  }
-
-  var numYes = confirm ("Click OK to confirm including numeric charactres");
-  if (numYes == true) {
-    array.push(numSymbols)
-  }
-
-  var specYes = confirm ("Click OK to confirm including special charactres");
-  if (specYes == true){
-    array.push(specSymbols)
-  }
 }
 
 
@@ -50,10 +59,6 @@ function generatePassword() {
 
 
 
-
-
-//   return  numOfChar
-// }
 
 
 // Write password to the #password input
@@ -67,3 +72,8 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// if (lcYes == false && ucYes == false && numYes && false && specYes == false) {
+//   alert("You need to choose at leasr one character option")
+// }
