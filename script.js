@@ -9,7 +9,7 @@ var specSymbols = ["~", "`", "!", "#", "$", "%", "^", "&", "*", "+", "=", "-", "
 function generatePassword() {
 
 
-  var array = []
+  var arrayOfChar = []
 
   var numOfChar = parseInt(prompt("How many characters would you like your password to contain?"))
 
@@ -26,29 +26,36 @@ function generatePassword() {
 
     var lcYes = confirm("Click OK to confirm including lower case letters");
     if (lcYes == true) {
-      array.push(lcLetters)
-
-
-      var ucYes = confirm("Click OK to confirm including upper case letters");
-      if (ucYes == true) {
-        array.push(ucLetters)
-      }
-
-      var numYes = confirm("Click OK to confirm including numeric charactres");
-      if (numYes == true) {
-        array.push(numSymbols)
-      }
-
-      var specYes = confirm("Click OK to confirm including special charactres");
-      if (specYes == true) {
-        array.push(specSymbols)
-      }
-      
+      arrayOfChar.push(lcLetters)
     }
 
+    var ucYes = confirm("Click OK to confirm including upper case letters");
+    if (ucYes == true) {
+      arrayOfChar.push(ucLetters)
+    }
 
+    var numYes = confirm("Click OK to confirm including numeric charactres");
+    if (numYes == true) {
+      arrayOfChar.push(numSymbols)
+    }
 
-    return array.charAt(Math.floor(Math.random() * numOfChar))
+    var specYes = confirm("Click OK to confirm including special charactres");
+    if (specYes == true) {
+      arrayOfChar.push(specSymbols)
+    }
+
+    if (lcYes == false && ucYes == false && numYes == false && specYes == false) {
+      alert("You need to choose at leasr one character option")
+    }
+    console.log(arrayOfChar.flat());
+   var finalArray =  arrayOfChar.flat()
+
+    for (var i = 0; i <= numOfChar; i++) {
+      console.log(finalArray[Math.floor(Math.random()*finalArray.length)]);
+
+    }
+
+    return arrayOfChar.charAt(Math.floor(Math.random() * numOfChar))
   }
 
 }
@@ -74,6 +81,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// if (lcYes == false && ucYes == false && numYes && false && specYes == false) {
-//   alert("You need to choose at leasr one character option")
-// }
