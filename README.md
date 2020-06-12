@@ -29,11 +29,11 @@ This application can be used for generating passwods that contain from 8 to 128 
 Here are the screenshots of the application:
 
 # Setting criteria
-![Criteria_1](assets/images/criteria_0.PNG)
+![Criteria_1](assets/criteria_0.PNG)
 
-![Criteria_2](assets/images/criteria_1.PNG)
+![Criteria_2](assets/criteria_1.PNG)
 
-![Criteria_3](assets/images/criteria_2.PNG)
+![Criteria_3](assets/criteria_2.PNG)
 
 
 
