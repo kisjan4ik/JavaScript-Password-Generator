@@ -13,7 +13,7 @@ function generatePassword() {
   
   
   let finalPass = ""
-
+  let noFinalPass = "Try again!"
   
   var numOfChar = parseInt(prompt("How many characters would you like your password to contain?")) 
 
@@ -63,12 +63,16 @@ function generatePassword() {
       finalPass += (finalArray[Math.floor(Math.random() * finalArray.length)]);
 
     }
-
+    if (arrayOfChar[i] = -1) {
+            return noFinalPass 
+    
+  }
 
 
     console.log(finalPass);
 
     return finalPass
+    
   }
 
 }
