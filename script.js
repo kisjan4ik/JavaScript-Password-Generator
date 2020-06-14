@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
- 
+
 // settiing the arrays of characters//
 var lcLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var ucLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -9,13 +9,13 @@ var specSymbols = ["~", "`", "!", "#", "$", "%", "^", "&", "*", "+", "=", "-", "
 
 function generatePassword() {
 
-// creating an empy array where will puch user choice //
+  // creating an empy array where will puch user choice //
   var arrayOfChar = []
 
-// creating string //
-  let finalPass = ""
-  
-//creating variable for the user choise based on promt answer //
+  // creating string //
+  let finalPass = "Your password is:   "
+  let noFinalPass = "Try again!";
+  //creating variable for the user choise based on promt answer //
   var numOfChar = parseInt(prompt("How many characters would you like your password to contain?"))
 
   // creating alert and condition if user choose not a number character //
@@ -60,33 +60,31 @@ function generatePassword() {
 
 
     }
-    }
+  }
 
 
 
-    console.log(arrayOfChar.flat());
+  console.log(arrayOfChar.flat());
 
-    //combining arrays of user chois in one array //
-    var finalArray = arrayOfChar.flat()
+  //combining arrays of user chois in one array //
+  var finalArray = arrayOfChar.flat()
 
 
-// creating ramndom selection of sybols according to the user's choice //
-    for (var i = 0; i < numOfChar; i++) {
-      finalPass += (finalArray[Math.floor(Math.random() * finalArray.length)]);
+  // creating ramndom selection of sybols according to the user's choice //
+  for (var i = 0; i < numOfChar; i++) {
+    finalPass += (finalArray[Math.floor(Math.random() * finalArray.length)]);
 
-    }
-     //returning result to the string //
-        return finalPass
+  }
 
-  
+ //returning result to the string depending on the user choice //
+  if (arrayOfChar.length > 0) {
+    return finalPass;
 
+  }
+  else { return noFinalPass; }
+ 
 
 }
-  
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
